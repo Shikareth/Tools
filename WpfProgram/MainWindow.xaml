@@ -1,0 +1,22 @@
+﻿<Window x:Class="WpfProgram.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfProgram"
+        xmlns:c="clr-namespace:Tools.Controls;assembly=Tools"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
+        Initialized="Window_Initialized">
+    <Viewbox Margin="100" Stretch="Uniform">
+    <StackPanel>
+            <c:IPInput x:Name="IP_Input" 
+                       Background="{Binding Path=BackgroundColor, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                       Foreground="{Binding Path=FontColor, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+        
+            <TextBlock TextAlignment="Center"
+                       Text="{Binding ElementName=IP_Input, Path=IP, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+    </StackPanel>
+    </Viewbox>
+</Window>

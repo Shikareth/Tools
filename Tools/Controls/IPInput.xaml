@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="Tools.Controls.IPInput"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Tools.Controls"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type TextBox}" x:Key="TextBoxSettings">
+            <Setter Property="Background" Value="{Binding Path=Background, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+            <Setter Property="Foreground" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+            <EventSetter Event="GotKeyboardFocus" Handler="TextBox_GotKeyboardFocus"/>
+            <EventSetter Event="PreviewMouseLeftButtonDown" Handler="TextBox_PreviewMouseLeftButtonDown"/>
+            <EventSetter Event="PreviewKeyUp" Handler="TextBox_PreviewKeyUp"/>
+        </Style>
+        <Style TargetType="{x:Type TextBlock}" x:Key="TextBlockSettings">
+            <Setter Property="Background" Value="{Binding Path=Background, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+            <Setter Property="Foreground" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox Grid.Column="0" BorderThickness="0" TextAlignment="Center" Name="Byte_1"
+                 DataContext="{Binding RelativeSource={RelativeSource AncestorType=UserControl}}"
+                 Text="{Binding Path=A, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Style="{StaticResource TextBoxSettings}"/>
+        <TextBlock Text="." Grid.Column="1" TextAlignment="Center"
+                   Style="{StaticResource TextBlockSettings}"/>
+        <TextBox Grid.Column="2" BorderThickness="0" TextAlignment="Center" Name="Byte_2"
+                 DataContext="{Binding RelativeSource={RelativeSource AncestorType=UserControl}}"
+                 Text="{Binding Path=B, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Style="{StaticResource TextBoxSettings}"/>
+        <TextBlock Text="." Grid.Column="3" TextAlignment="Center"
+                   Style="{StaticResource TextBlockSettings}"/>
+        <TextBox Grid.Column="4" BorderThickness="0" TextAlignment="Center" Name="Byte_3"
+                 DataContext="{Binding RelativeSource={RelativeSource AncestorType=UserControl}}"
+                 Text="{Binding Path=C, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Style="{StaticResource TextBoxSettings}"/>
+        <TextBlock Text="." Grid.Column="5" TextAlignment="Center"
+                   Style="{StaticResource TextBlockSettings}"/>
+        <TextBox Grid.Column="6" BorderThickness="0" TextAlignment="Center" Name="Byte_4"
+                 DataContext="{Binding RelativeSource={RelativeSource AncestorType=UserControl}}"
+                 Text="{Binding Path=D, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Style="{StaticResource TextBoxSettings}"/>
+    </Grid>
+</UserControl>
