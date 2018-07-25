@@ -51,6 +51,9 @@
     </Compile>
     <Compile Include="Controls\Converters\Double_to_AbsouluteDouble.cs" />
     <Compile Include="Controls\Converters\Double_to_HalfDouble.cs" />
+    <Compile Include="Controls\FilteredTextBox.xaml.cs">
+      <DependentUpon>FilteredTextBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\IPInput.xaml.cs">
       <DependentUpon>IPInput.xaml</DependentUpon>
     </Compile>
@@ -66,6 +69,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Controls\Chart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\FilteredTextBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
